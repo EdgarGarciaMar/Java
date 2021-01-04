@@ -19,11 +19,11 @@ import java.sql.Statement;
  * @author edgar
  */
 public class conexion {
-    Connection conect;
-    String driver = "com.mysql.cj.jdbc.Driver";
-    String usuario = "root";//usuario bd
-    String pass = "ABc12345678";//contraseña bd
-    String url = "jdbc:mysql://localhost:3306/perros?serverTimezone=UTC";//direccion localhost, nombre bd, zona horaria de la bd
+    private Connection conect;
+    private String driver = "com.mysql.cj.jdbc.Driver";
+    private String usuario = "root";//usuario bd
+    private String pass = "ABc12345678";//contraseña bd
+    private String url = "jdbc:mysql://localhost:3306/perros?serverTimezone=UTC";//direccion localhost, nombre bd, zona horaria de la bd
     
     public conexion(){//conexion con bd
         
