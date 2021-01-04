@@ -24,10 +24,10 @@ import javax.swing.JTextField;
  */
 public class GUIPerros extends JFrame implements ActionListener {
 conexion con;
-JButton b1,b2,b3,b4;
-JTextField t1,t2,t3,t4,t5;
-JLabel l1,l2,l3,l4,l5;
-JPanel p1,p2;
+private JButton b1,b2,b3,b4;
+private JTextField t1,t2,t3,t4,t5;
+private JLabel l1,l2,l3,l4,l5;
+private JPanel p1,p2;
 public GUIPerros (){
     super("Perros");
     this.setSize(500,500); 
