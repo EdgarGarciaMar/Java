@@ -18,18 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class tablas extends HttpServlet {
 
 
-	int j;
-	int numero1=1;
-	int numero2=2;
-	int numero3=3;
-	int numero4=4;
-	int numero5=5;
-	int numero6=6;
-	int numero7=7;
-	int numero8=8;
-	int numero9=9;
-	int numero10=10;
-	
+	int j,a;
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -55,85 +44,16 @@ public class tablas extends HttpServlet {
             out.println("<h1>Tablas de multiplicar del 1 al 10</h1>");
 			out.println("<br>");
 			
-			out.println("<h2>Tabla del 1</h2>");//tabla del 1
-			for(j = 1; j <= 10; j++)
+			for(a=1;a<=10;a++){
+				out.println("Tabla del "+a);
+				out.println("<br/>");
+		    for(j = 1; j <= 10; j++)
             {
-                out.println(numero1 + " X " + j + " = " + numero1*j);
+                out.println(a+ " X " + j + " = " + a*j);
 				out.println("<br/>");
             }
             out.println("<br>");
-			
-			out.println("<h2>Tabla del 2</h2>");//2
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero2 + " X " + j + " = " + numero2*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 3</h2>");//3
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero3 + " X " + j + " = " + numero3*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 4</h2>");//4
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero4 + " X " + j + " = " + numero4*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 5</h2>");//5
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero5 + " X " + j + " = " + numero5*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 6</h2>");//6
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero6 + " X " + j + " = " + numero6*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 7</h2>");//7
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero7 + " X " + j + " = " + numero7*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 8</h2>");//8
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero8 + " X " + j + " = " + numero8*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 9</h2>");//9
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero9 + " X " + j + " = " + numero9*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
-			
-			out.println("<h2>Tabla del 10</h2>");//10
-			for(j = 1; j <= 10; j++)
-            {
-                out.println(numero10 + " X " + j + " = " + numero10*j);
-				out.println("<br/>");
-            }
-            out.println("<br>");
+			}
 			
             out.println("</body>");
             out.println("</html>");
