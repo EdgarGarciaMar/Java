@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="medidor.FXMLvistaController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: red;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="174.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@tenga-en-cuenta-al-usar-cables-y-alambres-1.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="16.0" layoutY="15.0" prefHeight="49.0" prefWidth="144.0" text="Calculadora de  error en  " textFill="#f8f6f6" />
+            <Label layoutX="23.0" layoutY="39.0" prefHeight="41.0" prefWidth="129.0" text="alambre de cobre 5.71." textFill="WHITE" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: blue;">
+         <children>
+            <Button id="B2" layoutX="199.0" layoutY="274.0" mnemonicParsing="false" onAction="#B2" text="Probabilidad para que no tenga fallas" textAlignment="CENTER" />
+            <Button id="B1" layoutX="234.0" layoutY="193.0" mnemonicParsing="false" onAction="#B1" text="Calcular fallas promedio" textAlignment="CENTER" />
+            <TextField fx:id="num" layoutX="11.0" layoutY="199.0" promptText="Nº" />
+            <TextField fx:id="mm" layoutX="11.0" layoutY="274.0" promptText="mm." />
+            <Label layoutX="9.0" layoutY="168.0" text="Escriba aqui las fallas por milimetro" textFill="#f8f6f6" />
+            <Label layoutX="8.0" layoutY="238.0" text="Escriba aqui la longitud del alambre" textFill="#f5f4f4" />
+            <ImageView fitHeight="92.0" fitWidth="113.0" layoutX="25.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cable-dañado-azul-con-rojo-el-rayo-naranja-y-la-chispa-línea-rota-dispositivo-eléctrico-defectuoso-regla-de-seguridad-201190908.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="92.0" fitWidth="129.0" layoutX="249.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Cable%20bueno.jpeg" />
+               </image>
+            </ImageView>
+            <Label layoutX="-1.0" layoutY="14.0" text="Ingrese los valores para conocer los errores en la producción." textAlignment="JUSTIFY" textFill="#fcf9f9" />
+            <Label layoutX="-1.0" layoutY="49.0" text="Cable defectuoso (1.5 fallas promedio)" textFill="#f5f2f2" />
+            <Label layoutX="249.0" layoutY="49.0" text="Cable en buen estado" textFill="#fcf9f9" />
+            <Label fx:id="Resultado" layoutX="85.0" layoutY="343.0" prefHeight="17.0" prefWidth="210.0" text="-----------------------------" textFill="#eeeaea" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
