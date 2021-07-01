@@ -1,4 +1,4 @@
-package dead;//h
+package dead;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import javax.swing.*;
