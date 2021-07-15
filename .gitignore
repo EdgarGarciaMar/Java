@@ -76,3 +76,4 @@ dkms.conf
 hs_err_pid*
 # .DS_Store de Mac
 *.DS_Store
+*.properties
