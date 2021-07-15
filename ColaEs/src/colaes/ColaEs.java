@@ -33,30 +33,46 @@ public void enqueve(int tam,int dato){
 }
 
 public void dequeuve(){
-    if(front==0 && rear==0)System.out.println("La cola esta vacia.");
+    if(front==0 && rear==0){
+        System.out.println("La cola esta vacia.");
+    }
+    else{
     System.out.println("Se elimino el dato:"+Elementos[front]);
     Elementos[front]=0;
     front++;
+    }
 }
 
 public void display(){
-    if(front==0 && rear==0)System.out.println("La cola esta vacia.");
-    if(front==rear){
-        System.out.println("Front y Rear");
-        System.out.println("|");
-        System.out.println("v");
+    if(front==0 && rear==0){
+        System.out.println("La cola esta vacia.");
     }
+    else{
+    if(front==0 && rear==1){
+        System.out.println("\tFront y Rear");
+        System.out.println("\t|");
+        System.out.println("\tv");
+        for(int i=front;i<rear;i++){
+        System.out.print("\t"+Elementos[i]);
+        System.out.println("");
+        
+    }
+    }
+    else{
     for(int i=front;i<rear;i++){
-        System.out.print(Elementos[i]);
+        System.out.print("\t"+Elementos[i]);
         if(front==i){
-            System.out.println("");
+            System.out.print("");
             System.out.print("Front");
         }
-        if(rear==i){
-            System.out.println("");
+        else if(rear==i+1){
+            System.out.print("");
             System.out.print("Rear");
         }
+        System.out.println("");
         
+    }
+    }
     }
 }
 
