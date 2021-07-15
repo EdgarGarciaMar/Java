@@ -5,6 +5,8 @@
  */
 package colaes;
 
+import java.util.Scanner;
+
 /**
  *
  * @author edgargarcia
@@ -31,6 +33,7 @@ public void enqueve(int tam,int dato){
 }
 
 public void dequeuve(){
+    if(front==0 && rear==0)System.out.println("La cola esta vacia.");
     System.out.println("Se elimino el dato:"+Elementos[front]);
     Elementos[front]=0;
     front++;
@@ -58,7 +61,7 @@ public void display(){
 }
 
 public void front(){
-    if(front==0){
+    if(front==0 && rear==0){
         System.out.println("La cola esta vacia");
     }
     else{
@@ -68,7 +71,53 @@ public void front(){
 }
 
     public static void main(String[] args) {
+        ColaEs cola;
+        int tam;
+        int salida=1;
+        int opc;
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("---Cola Estatica---");
+        System.out.println("Ingresa el Tamaño:");
+        tam= entrada.nextByte();
+        cola=new ColaEs(tam);
         
+        while(salida==1){
+        System.out.println("---Opciones de la Cola---");
+        System.out.println("1: Agregar dato a la cola");
+        System.out.println("2: Eliminar dato de la cola");
+        System.out.println("3: Buscar el frente");
+        System.out.println("4: Imprimir la cola");
+        System.out.println("5: Salir");
+        System.out.println("Selecciona una opción:");
+        opc=entrada.nextByte();
+        
+        switch(opc){
+            case 1:
+                int dato;
+                System.out.println("Ingrese el dato");
+                dato=entrada.nextByte();
+                cola.enqueve(tam, dato);
+                break;
+            case 2:
+                cola.dequeuve();
+                System.out.println("Se elimino el dato del frente.");
+                break;
+            case 3:
+                cola.front();
+                break;
+            case 4:
+                cola.display();
+                break;
+            case 5:
+                salida=0;
+                break;
+            default:
+                System.out.println("***Seleccione una opción del menu.***");
+                break;
+                        
+        }
+        
+        }
     }
     
 }
