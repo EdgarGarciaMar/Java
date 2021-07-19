@@ -19,16 +19,11 @@ public class conexion {
     private Statement sentencia;
 
     public conexion() {
-        usrBD = "sql3413419";
-        passBD = "2yBD4B2aEN";
-        urlBD = "jdbc:mysql://sql3.freesqldatabase.com/sql3413419";
-        driverClassName = "com.mysql.cj.jdbc.Driver";
-        /*
         usrBD = "root";
-        passBD = "n0m3l0s3";
-        urlBD = "jdbc:mysql://localhost:3306/vaers";
+        passBD = "ABc12345678";
+        urlBD = "jdbc:mysql://localhost:3306/basefarmaciaok?serverTimezone=UTC";
         driverClassName = "com.mysql.cj.jdbc.Driver";
-        */
+
     }
  
     public conexion(String usrBD, String passBD, String urlBD, String driverClassName) {

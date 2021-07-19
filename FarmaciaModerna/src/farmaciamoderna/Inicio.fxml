@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="farmaciamoderna.InicioController">
+   <children>
+      <Label alignment="CENTER" layoutX="151.0" layoutY="27.0" prefHeight="44.0" prefWidth="284.0" text="Farmacia Moderna" textAlignment="CENTER" textFill="#1b4e70" textOverrun="CENTER_ELLIPSIS" underline="true">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="contra" alignment="CENTER" layoutX="213.0" layoutY="297.0" promptText="Contraseña" />
+      <TextField fx:id="ID" alignment="CENTER" layoutX="213.0" layoutY="252.0" promptText="ID" />
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="218.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Imagenes/Farmacia.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="249.0" layoutY="348.0" mnemonicParsing="false" onAction="#inicio" text="Iniciar sesión" textAlignment="CENTER" />
+      <Label fx:id="msj" alignment="CENTER" layoutX="167.0" layoutY="417.0" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
