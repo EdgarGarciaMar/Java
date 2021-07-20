@@ -7,46 +7,78 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AED7F2;" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AED7F2;" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="farmaciamoderna.FXMLAdmController">
   <tabs>
-    <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Administrador">
+    <Tab fx:id="tab1" style="-fx-background-color: #FEFFFF;" text="Registrar Administrador">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextField alignment="CENTER" layoutX="16.0" layoutY="83.0" prefHeight="27.0" prefWidth="213.0" promptText="Nombre del Administrador" />
+                  <TextField fx:id="nom" alignment="CENTER" layoutX="16.0" layoutY="83.0" prefHeight="27.0" prefWidth="213.0" promptText="Nombre del Administrador" />
                   <Label alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="27.0" prefWidth="574.0" text="Instrucciones: Llene todos los campos." textAlignment="CENTER">
                      <font>
                         <Font name="System Font" size="15.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="17.0" layoutY="126.0" prefHeight="27.0" prefWidth="211.0" promptText="Apellido Paterno del Administrador" />
-                  <TextField layoutX="17.0" layoutY="170.0" prefHeight="27.0" prefWidth="210.0" promptText="Apellido Materno del Administrador" />
-                  <TextField layoutX="16.0" layoutY="208.0" prefHeight="27.0" prefWidth="209.0" promptText="ID Administrador" />
-                  <TextField layoutX="16.0" layoutY="249.0" prefHeight="27.0" prefWidth="209.0" promptText="Contraseña del Administrador" />
+                  <TextField fx:id="apellpa" alignment="CENTER" layoutX="17.0" layoutY="126.0" prefHeight="27.0" prefWidth="211.0" promptText="Apellido Paterno del Administrador" />
+                  <TextField fx:id="apellma" alignment="CENTER" layoutX="17.0" layoutY="170.0" prefHeight="27.0" prefWidth="210.0" promptText="Apellido Materno del Administrador" />
+                  <TextField fx:id="idnew" alignment="CENTER" layoutX="16.0" layoutY="208.0" prefHeight="27.0" prefWidth="209.0" promptText="ID Administrador" />
+                  <TextField fx:id="contranew" alignment="CENTER" layoutX="16.0" layoutY="249.0" prefHeight="27.0" prefWidth="209.0" promptText="Contraseña del Administrador" />
                   <Label alignment="CENTER" layoutX="36.0" layoutY="48.0" prefHeight="17.0" prefWidth="173.0" text="Datos del nuevo Administrador" />
                   <Label alignment="CENTER" layoutX="350.0" layoutY="48.0" prefHeight="17.0" prefWidth="166.0" text="Validación del Administrador" />
-                  <TextField alignment="CENTER" layoutX="353.0" layoutY="83.0" prefHeight="27.0" prefWidth="179.0" promptText="ID" />
-                  <PasswordField alignment="CENTER" layoutX="353.0" layoutY="126.0" prefHeight="27.0" prefWidth="180.0" promptText="Contraseña" />
-                  <Label alignment="CENTER" layoutX="374.0" layoutY="199.0" prefHeight="17.0" prefWidth="138.0" text="Alertas">
+                  <TextField fx:id="id" alignment="CENTER" layoutX="353.0" layoutY="83.0" prefHeight="27.0" prefWidth="179.0" promptText="ID" />
+                  <PasswordField fx:id="contra" alignment="CENTER" layoutX="353.0" layoutY="126.0" prefHeight="27.0" prefWidth="180.0" promptText="Contraseña" />
+                  <Label alignment="CENTER" layoutX="364.0" layoutY="240.0" prefHeight="17.0" prefWidth="138.0" text="Alertas">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="289.0" layoutY="241.0" prefHeight="17.0" prefWidth="292.0" textAlignment="CENTER" />
+                  <Label fx:id="messajes" alignment="CENTER" layoutX="266.0" layoutY="268.0" prefHeight="17.0" prefWidth="313.0" textAlignment="CENTER" textFill="#d31818" />
+                  <Button fx:id="r" alignment="CENTER" layoutX="416.0" layoutY="184.0" mnemonicParsing="false" onAction="#registrar" style="-fx-background-color: #1b4e70;" text="Registrar" textAlignment="CENTER" textFill="#feffff" />
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Farmacia">
+    <Tab fx:id="tab2" style="-fx-background-color: #FEFFFF;" text="Registrar Farmacia">
       <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button alignment="CENTER" layoutX="432.0" layoutY="194.0" mnemonicParsing="false" onAction="#registrarfarma" style="-fx-background-color: #1b4e70;" text="Registrar" textAlignment="CENTER" textFill="#feffff" />
+                  <Label fx:id="messajes1" alignment="CENTER" layoutX="24.0" layoutY="308.0" prefHeight="17.0" prefWidth="563.0" textAlignment="CENTER" textFill="#d31818" />
+                  <Label alignment="CENTER" layoutX="237.0" layoutY="281.0" prefHeight="17.0" prefWidth="138.0" text="Alertas">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="contra1" alignment="CENTER" layoutX="376.0" layoutY="148.0" prefHeight="27.0" prefWidth="180.0" promptText="Contraseña" />
+                  <TextField fx:id="id1" alignment="CENTER" layoutX="376.0" layoutY="107.0" prefHeight="27.0" prefWidth="179.0" promptText="ID" />
+                  <Label alignment="CENTER" layoutX="383.0" layoutY="67.0" prefHeight="17.0" prefWidth="166.0" text="Validación del Administrador" />
+                  <Label alignment="CENTER" layoutX="13.0" layoutY="14.0" prefHeight="27.0" prefWidth="574.0" text="Instrucciones: Llene todos los campos." textAlignment="CENTER">
+                     <font>
+                        <Font name="System Font" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="idfar" alignment="CENTER" layoutX="13.0" layoutY="97.0" promptText="ID" />
+                  <TextField fx:id="nomfar" alignment="CENTER" layoutX="13.0" layoutY="134.0" promptText="Nombre" />
+                  <TextField fx:id="cp" alignment="CENTER" layoutX="182.0" layoutY="134.0" promptText="C.P." />
+                  <TextField fx:id="phone" alignment="CENTER" layoutX="182.0" layoutY="97.0" promptText="Telefono" />
+                  <TextField fx:id="edo" alignment="CENTER" layoutX="13.0" layoutY="170.0" promptText="Estado" />
+                  <TextField fx:id="city" alignment="CENTER" layoutX="182.0" layoutY="170.0" promptText="Ciudad" />
+                  <TextField fx:id="col" alignment="CENTER" layoutX="13.0" layoutY="207.0" promptText="Colonia" />
+                  <TextField fx:id="calle" alignment="CENTER" layoutX="182.0" layoutY="207.0" promptText="Calle" />
+                  <TextField fx:id="num" alignment="CENTER" layoutX="94.0" layoutY="246.0" promptText="Nª" />
+               </children></AnchorPane>
       </content>
     </Tab>
-      <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Proveedor">
+      <Tab fx:id="tab3" style="-fx-background-color: #FEFFFF;" text="Registrar Proveedor">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
       </Tab>
-      <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Empleado">
+      <Tab fx:id="tab4" style="-fx-background-color: #FEFFFF;" text="Registrar Empleado">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+      <Tab fx:id="tab5" style="-fx-background-color: #FEFFFF;" text="Listas">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
         </content>
