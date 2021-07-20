@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #AED7F2;" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <tabs>
+    <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Administrador">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField alignment="CENTER" layoutX="16.0" layoutY="83.0" prefHeight="27.0" prefWidth="213.0" promptText="Nombre del Administrador" />
+                  <Label alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="27.0" prefWidth="574.0" text="Instrucciones: Llene todos los campos." textAlignment="CENTER">
+                     <font>
+                        <Font name="System Font" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="17.0" layoutY="126.0" prefHeight="27.0" prefWidth="211.0" promptText="Apellido Paterno del Administrador" />
+                  <TextField layoutX="17.0" layoutY="170.0" prefHeight="27.0" prefWidth="210.0" promptText="Apellido Materno del Administrador" />
+                  <TextField layoutX="16.0" layoutY="208.0" prefHeight="27.0" prefWidth="209.0" promptText="ID Administrador" />
+                  <TextField layoutX="16.0" layoutY="249.0" prefHeight="27.0" prefWidth="209.0" promptText="Contraseña del Administrador" />
+                  <Label alignment="CENTER" layoutX="36.0" layoutY="48.0" prefHeight="17.0" prefWidth="173.0" text="Datos del nuevo Administrador" />
+                  <Label alignment="CENTER" layoutX="350.0" layoutY="48.0" prefHeight="17.0" prefWidth="166.0" text="Validación del Administrador" />
+                  <TextField alignment="CENTER" layoutX="353.0" layoutY="83.0" prefHeight="27.0" prefWidth="179.0" promptText="ID" />
+                  <PasswordField alignment="CENTER" layoutX="353.0" layoutY="126.0" prefHeight="27.0" prefWidth="180.0" promptText="Contraseña" />
+                  <Label alignment="CENTER" layoutX="374.0" layoutY="199.0" prefHeight="17.0" prefWidth="138.0" text="Alertas">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="289.0" layoutY="241.0" prefHeight="17.0" prefWidth="292.0" textAlignment="CENTER" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Farmacia">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+      <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Proveedor">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+      <Tab style="-fx-background-color: #FEFFFF;" text="Registrar Empleado">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

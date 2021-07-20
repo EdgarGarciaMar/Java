@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 
 /**
  *
@@ -23,7 +24,7 @@ public class FarmaciaModerna extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Inicio.fxml"));
         
         Scene scene = new Scene(root);
-        
+        stage.getIcons().add(new Image("/Imagenes/Farmacia.png"));
         stage.setScene(scene);
         stage.show();
     }
