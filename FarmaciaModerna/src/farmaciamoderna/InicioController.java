@@ -51,9 +51,9 @@ public class InicioController implements Initializable {
                 if(rs.getString("msj").equals("admin")){
                 System.out.println("Inicio Admin");
                             Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            FXMLLoader loaderInicio = new FXMLLoader(getClass().getResource("FXMLAdm.fxml"));
-                            Scene sceneInicio = new Scene(loaderInicio.load());
-                            stageActual.setScene(sceneInicio);
+                            FXMLLoader loaderInicioa = new FXMLLoader(getClass().getResource("FXMLAdm.fxml"));
+                            Scene sceneInicioa = new Scene(loaderInicioa.load());
+                            stageActual.setScene(sceneInicioa);
                 
                 }
                 if(rs.getString("msj").equals("empleado")){

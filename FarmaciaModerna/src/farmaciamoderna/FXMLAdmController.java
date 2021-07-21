@@ -6,18 +6,23 @@
 package farmaciamoderna;
 
 import Base.conexion;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -81,6 +86,22 @@ public class FXMLAdmController implements Initializable {
     private TextField calle;
     @FXML
     private TextField num;
+    @FXML
+    private Tab tab6;
+    @FXML
+    private TextField id11;
+    @FXML
+    private PasswordField contra11;
+    @FXML
+    private Label messajes11;
+    @FXML
+    private TextField idprovedor;
+    @FXML
+    private TextField nombreprovedor;
+    @FXML
+    private TextField telefonoprovedor;
+    @FXML
+    private TextField paisprovedor;
 
 
     @Override
@@ -113,13 +134,6 @@ public class FXMLAdmController implements Initializable {
                     if(rs.getString("msj").equals("ok"))messajes.setText("Registro exitoso, "+idNew+","+nombre);
                 }
                 bd.cierraConexion();
-                /*nom.setText("");
-                apellpa.setText("");
-                apellma.setText("");
-                idnew.setText("");
-                contranew.setText("");
-                id.setText("");
-                contra.setText("");*/
                 vaciarregistraadm();
             } catch (SQLException e) {
                 System.out.println(e);
@@ -143,13 +157,11 @@ public class FXMLAdmController implements Initializable {
         
         String ida=id1.getText();
         String c=contra1.getText();
+        if(numf.equals(""))messajes1.setText("Por favor no deje campos vacios");
         
+        int n=Integer.parseInt(numf);
         
-        if(numf.equals("")){
-            messajes1.setText("Por favor no deje campos vacios");
-        }else{
-           int n= Integer.parseInt(numf); 
-        }
+
         if(numf.equalsIgnoreCase("")||callf.equalsIgnoreCase("")||colf.equalsIgnoreCase("")||ciudad.equalsIgnoreCase("")||estado.equalsIgnoreCase("")||CP.equalsIgnoreCase("")||nombref.equalsIgnoreCase("")||IDf.equalsIgnoreCase("")||telefono.equalsIgnoreCase("")||ida.equalsIgnoreCase("")||c.equalsIgnoreCase("")){
             messajes1.setText("Por favor no deje campos vacios");
         }else{
@@ -164,17 +176,6 @@ public class FXMLAdmController implements Initializable {
                     if(rs.getString("msj").equals("Porfavor verifique, si no es Admin no puede Agregar Farmacias."))messajes1.setText("Porfavor verifique, si no es Admin no puede Agregar Farmacias.");
                 }
                 bd.cierraConexion();
-                /*num.setText("");
-                calle.setText("");
-                col.setText("");
-                city.setText("");
-                edo.setText("");
-                cp.setText("");
-                nomfar.setText("");
-                idfar.setText("");
-                phone.setText("");
-                id1.setText("");
-                contra1.setText("");*/
                 vaciarregistrafarm();
             } catch (SQLException e) {
                 System.out.println(e);
@@ -203,6 +204,53 @@ public class FXMLAdmController implements Initializable {
                 phone.setText("");
                 id1.setText("");
                 contra1.setText("");
+    }
+
+    @FXML
+    private void salir(ActionEvent event) throws IOException {
+                            Stage stageActual = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            FXMLLoader loaderInicio = new FXMLLoader(getClass().getResource("Inicio.fxml"));
+                            Scene sceneInicio = new Scene(loaderInicio.load());
+                            stageActual.setScene(sceneInicio);
+    }
+
+    @FXML
+    private void registrarProveedor(ActionEvent event) {
+        String idproveedor=idprovedor.getText();
+        String nombreproveedor=nombreprovedor.getText();
+        String telefonoproveedor=telefonoprovedor.getText();
+        String paisproveedor=paisprovedor.getText();
+        
+        String idadmon=id11.getText();
+        String contraadmon=contra11.getText();
+        if(idproveedor.equalsIgnoreCase("")||nombreproveedor.equalsIgnoreCase("")||telefonoproveedor.equalsIgnoreCase("")||paisproveedor.equalsIgnoreCase("")||idadmon.equalsIgnoreCase("")||contraadmon.equalsIgnoreCase("")){
+        messajes11.setText("Por favor no deje campos vacios");
+        }else{
+            try {
+                System.out.println(idproveedor);
+                bd.conectar();
+                ResultSet rs=bd.ejecutaQuery("call spagregarpro(\""+idadmon+"\",\""+contraadmon+"\", \""+idproveedor+"\",\""+nombreproveedor+"\",\""+telefonoproveedor+"\", \""+paisproveedor+"\");");
+                
+                if(rs.next()){
+                    if(rs.getString("msj").equals("ID incorrecta"))messajes11.setText("ID incorrecta");
+                    if(rs.getString("msj").equals("Contraseña incorrecta"))messajes11.setText("Contraseña incorrecta");
+                    if(rs.getString("msj").equals("ok"))messajes11.setText("Registro exitoso"+" "+idproveedor+","+nombreproveedor);
+                    if(rs.getString("msj").equals("Porfavor verifique, si no es Admin no puede Agregar Provedores."))messajes11.setText("Porfavor verifique, si no es Admin no puede Agregar Provedores.");
+                }
+                bd.cierraConexion();
+                vaciarprovedor();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+    }
+    public void vaciarprovedor(){
+        idprovedor.setText("");
+        nombreprovedor.setText("");
+        telefonoprovedor.setText("");
+        paisprovedor.setText("");
+        id11.setText("");
+        contra11.setText("");
     }
     
 }
