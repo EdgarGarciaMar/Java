@@ -21,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -102,6 +103,32 @@ public class FXMLAdmController implements Initializable {
     private TextField telefonoprovedor;
     @FXML
     private TextField paisprovedor;
+    @FXML
+    private TableColumn<?, ?> columna1;
+    @FXML
+    private TableColumn<?, ?> columna2;
+    @FXML
+    private TableColumn<?, ?> columna3;
+    @FXML
+    private TableColumn<?, ?> columna4;
+    @FXML
+    private TableColumn<?, ?> columna5;
+    @FXML
+    private TableColumn<?, ?> columna6;
+    @FXML
+    private TableColumn<?, ?> columna7;
+    @FXML
+    private TableColumn<?, ?> columna8;
+    @FXML
+    private TableColumn<?, ?> columna9;
+    @FXML
+    private TableColumn<?, ?> columna10;
+    @FXML
+    private TableColumn<?, ?> columna11;
+    @FXML
+    private TableColumn<?, ?> columna12;
+    @FXML
+    private TableColumn<?, ?> columna13;
 
 
     @Override
@@ -251,6 +278,20 @@ public class FXMLAdmController implements Initializable {
         paisprovedor.setText("");
         id11.setText("");
         contra11.setText("");
+    }
+
+    @FXML
+    private void empleadosview(ActionEvent event) {
+        try {
+            bd.conectar();
+            ResultSet rs=bd.ejecutaQuery("select * from Mostrarempleados");
+            if(rs.next()){
+                if(rs.getString("ID").equals("ID"))columna1.setText(rs.getString("ID"));
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        
     }
     
 }
