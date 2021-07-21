@@ -292,7 +292,7 @@ public class FXMLAdmController implements Initializable {
         List<empleado> empleados = new ArrayList<>();
         empleado empleadox;
         try {
-            columna1.setText("ID");
+            /*columna1.setText("ID");
             columna2.setText("Nombres");
             columna3.setText("Apellido Paterno");
             columna4.setText("Apellido Materno");
@@ -304,7 +304,7 @@ public class FXMLAdmController implements Initializable {
             columna10.setText("Colonia");
             columna11.setText("Ciudad");
             columna12.setText("Estado");
-            columna13.setText("Codigo Postal");
+            columna13.setText("Codigo Postal");*/
             bd.conectar();
             ResultSet rs=bd.ejecutaQuery("select * from Mostrarempleados");
             while(rs.next()){
@@ -323,12 +323,9 @@ public class FXMLAdmController implements Initializable {
                         rs.getString("Codigo Postal")
                 );
                 empleados.add(empleadox);
-            System.out.println(empleadox.getnombre()+empleadox.getapellidop()+empleadox.getapellidom()+empleadox.getsucursal());
+                System.out.println(empleadox.getnombre()+empleadox.getapellidop()+empleadox.getapellidom()+empleadox.getsucursal());
 
             }
-           /*for(empleado empleado: empleados){
-                columna1.setCellFactory();
-            */
             bd.cierraConexion();
         } catch (SQLException e) {
             System.out.println(e);
