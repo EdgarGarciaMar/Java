@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,7 +25,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import tbpane.empleado;
 
 /**
  * FXML Controller class
@@ -129,11 +133,14 @@ public class FXMLAdmController implements Initializable {
     private TableColumn<?, ?> columna12;
     @FXML
     private TableColumn<?, ?> columna13;
+    
+        private List<empleado> empleados;
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         bd= new conexion();
+        empleados = new ArrayList<>();
     }    
 
     @FXML
@@ -282,12 +289,47 @@ public class FXMLAdmController implements Initializable {
 
     @FXML
     private void empleadosview(ActionEvent event) {
+        List<empleado> empleados = new ArrayList<>();
+        empleado empleadox;
         try {
+            columna1.setText("ID");
+            columna2.setText("Nombres");
+            columna3.setText("Apellido Paterno");
+            columna4.setText("Apellido Materno");
+            columna5.setText("ID de Farmacia laboral");
+            columna6.setText("Sucursal");
+            columna7.setText("Telefono");
+            columna8.setText("Numero");
+            columna9.setText("Calle");
+            columna10.setText("Colonia");
+            columna11.setText("Ciudad");
+            columna12.setText("Estado");
+            columna13.setText("Codigo Postal");
             bd.conectar();
             ResultSet rs=bd.ejecutaQuery("select * from Mostrarempleados");
-            if(rs.next()){
-                if(rs.getString("ID").equals("ID"))columna1.setText(rs.getString("ID"));
+            while(rs.next()){
+                 empleadox = new empleado(rs.getString("ID"),
+                        rs.getString("Nombres"),
+                        rs.getString("Apellido Paterno"),
+                        rs.getString("Apellido Materno"),
+                        rs.getString("ID de Farmacia laboral"),
+                        rs.getString("Sucursal"),
+                        rs.getString("Telefono"),
+                        rs.getString("Numero"),
+                        rs.getString("Calle"),
+                        rs.getString("Colonia"),
+                        rs.getString("Ciudad"),
+                        rs.getString("Estado"),
+                        rs.getString("Codigo Postal")
+                );
+                empleados.add(empleadox);
+            System.out.println(empleadox.getnombre()+empleadox.getapellidop()+empleadox.getapellidom()+empleadox.getsucursal());
+
             }
+           /*for(empleado empleado: empleados){
+                columna1.setCellFactory();
+            */
+            bd.cierraConexion();
         } catch (SQLException e) {
             System.out.println(e);
         }
