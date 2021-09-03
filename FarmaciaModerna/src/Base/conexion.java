@@ -20,7 +20,7 @@ public class conexion {
 
     public conexion() {
         usrBD = "root";
-        passBD = "ABc12345678";
+        passBD = "12345678";
         urlBD = "jdbc:mysql://localhost:3306/farm?serverTimezone=UTC";
         driverClassName = "com.mysql.cj.jdbc.Driver";
 
